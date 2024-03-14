@@ -1,0 +1,407 @@
+@font-face {
+    font-family: "Ladna Faux Bold";
+    src: url(../Fonts/Ladna-FauxBold.woff2);
+}
+
+@font-face {
+    font-family: "Ladna Faux Bold Italic";
+    src: url(../Fonts/Ladna-FauxBoldItalic.woff2);
+}
+
+
+@font-face {
+    font-family: "Ladna Faux Regular";
+    src: url(../Fonts/Ladna-FauxRegular.woff2);
+}
+
+@font-face {
+    font-family: "Ladna Faux Regular Italic";
+    src: url(../Fonts/Ladna-FauxRegularItalic.woff2);
+}
+
+body {
+    margin: 0;
+    background-color: #002233;
+    background-color: hsl(20, 50%, 10%); 
+    background-color: hsl(370, 50%, 10%);
+    background-color: hsl(60, 10%, 30%);
+    background-color: hsl(230, 30%, 20%);
+}
+
+div.gradient {
+    position: fixed;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    pointer-events: none;
+
+    background:linear-gradient(to top ,hsl(0, 0%, 20%), transparent);
+
+    mix-blend-mode: normal;
+}
+
+div.bg img {
+    position: fixed;
+    min-width: 100dvw;
+    min-height: 100dvh;
+}
+
+div.bg-video {
+    position: fixed;
+    min-width: 100dvw;
+    min-height: 100dvh;
+    object-fit: contain;
+    overflow: none;
+
+
+    z-index: 15;
+    pointer-events: none;
+    mix-blend-mode: difference;
+
+}
+
+video {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    opacity: .15;
+    filter: blur(8px);
+    mix-blend-mode: normal;
+    pointer-events: none;
+}
+
+a.title {
+    position: fixed;
+    margin: 0;
+    bottom: 1rem;
+    left: 1rem;
+
+    font-family: "Ladna Faux Bold", Arial, sans-serif;
+    font-size: 8rem;
+    line-height: 6rem;
+    letter-spacing: -.4rem;
+    text-decoration: none;
+
+    color: rgb(230, 230, 230);
+    z-index: 20;
+
+    transition: opacity .25s ease-in-out, font-size .25s ease-in-out, line-height .25s ease-in-out;
+}
+
+a.title:hover {
+    opacity: 0;
+    cursor: zoom-in;
+}
+
+a#contact {
+    position: fixed;
+    margin: 0;
+    top: 1rem;
+    left: 1rem;
+
+    font-family: "Ladna Faux Regular", Arial, sans-serif;
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    letter-spacing: -.09rem;
+    text-decoration: none;
+
+    color: rgb(230, 230, 230);
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 20;
+    
+
+    transition: mix-blend-mode .1s ease-in-out, filter .2s ease-in-out;
+
+        -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+a:hover {
+    filter: blur(4px);
+}
+
+
+div.button-language {
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+}
+
+a.language {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+
+    font-family: "Ladna Faux Regular", Arial, sans-serif;
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    letter-spacing: -.09rem;
+    text-decoration: none;
+
+    color: rgb(230, 230, 230);
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 20;
+    
+
+    transition: mix-blend-mode .1s ease-in-out, filter .2s ease-in-out;
+
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+div.nav-bar {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+
+    display: flex;
+    column-gap: .7rem;
+
+    z-index: 20;
+    transition: column-gap .25s ease-in-out;
+}
+
+div.nav-bar a {
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+}
+
+div.nav-button-container {
+    margin: 0;
+/*     padding-left: 1rem; */
+
+    font-family: "Ladna Faux Regular", Arial, sans-serif;
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    letter-spacing: -.09rem;
+    text-decoration: none;
+
+    color: rgb(230, 230, 230);
+    cursor: pointer;
+    white-space: nowrap;
+    z-index: 10;
+    mix-blend-mode: normal;
+
+    transition: mix-blend-mode .1s ease-in-out, filter .2s ease-in-out;
+
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+div.nav-button-container:hover {
+    filter: blur(4px);
+}
+
+.back-wrapper {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+
+    cursor: pointer;
+    z-index: 200;
+}
+
+#back {
+    font-family: "Ladna Faux Regular", sans-serif;
+    font-size: 2.25rem;
+    line-height: 2rem;
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+
+    transition: filter .2s ease-in-out;
+}
+
+
+
+
+
+
+div.column-container {
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    mix-blend-mode: normal;
+    z-index: 15;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+div#article-container {
+    position: relative;
+    width: calc(37.5vw + 2rem);
+    max-width: 65ch;
+    max-height: calc(100dvh - 2rem);   
+    height: min-content;
+    opacity: 1;
+    padding: 1rem;
+    padding-top: 0rem;
+
+    overflow: auto;
+    pointer-events: initial;
+    flex-flow: column nowrap;
+    row-gap: 1rem;
+
+    display: flex;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+    row-gap: 1rem;
+}
+
+div#text-container {
+    position: relative;
+    width: calc(37.5vw + 2rem);
+    max-width: 65ch;
+    height: calc(100dvh - 2rem);    
+    opacity: 1;
+    padding: 1rem;
+
+    overflow: auto;
+    pointer-events: initial;
+}
+
+div#text-wrapper {
+    font-family: "Ladna Faux Regular", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: -.02rem;
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+    white-space: pre-wrap;
+}
+
+p {
+    margin: 0;
+}
+
+strong {
+    font-family: "Ladna Faux Bold";
+}
+
+a {
+    color: rgb(230, 230, 230);
+    transition: mix-blend-mode .1s ease-in-out, filter .2s ease-in-out;
+}
+
+em {
+    font-family: "Ladna Faux Regular Italic";
+    font-feature-settings: "ss01" 1;
+}
+
+sup {
+    vertical-align: super;
+    font-size: .65rem;
+    line-height: 0rem;
+}
+
+
+
+
+
+
+div.padding {
+    height: 5.25rem;
+    width: 100%;
+    pointer-events: none;
+}
+
+h1 {
+    margin: 0;
+    margin-bottom: 0rem;
+
+    font-family: "Ladna Faux Bold", sans-serif;
+    font-size: 2.25rem;
+    line-height: 2.25rem;
+    letter-spacing: -.09rem;
+
+    color: rgb(230, 230, 230);
+}
+
+p.body {
+    margin: 0;
+
+    font-family: "Ladna Faux Regular", sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: -.02rem;
+    text-wrap: balance;
+
+    color: rgb(230, 230, 230);
+
+}
+
+a.text-article {
+    position: relative;
+    overflow: visible;
+
+    cursor: pointer;
+
+    transition: mix-blend-mode .1s ease-in-out, filter .2s ease-in-out;
+}
+
+a.text-article:hover {
+    mix-blend-mode: difference;
+    filter: blur(4px);
+    white-space: normal;
+}
+
+p.caption {
+    margin: 0;
+
+    font-family: "Ladna Faux Bold", sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: -.02rem;
+    text-wrap: balance;
+
+    color: rgb(230, 230, 230);
+}
+
+a.text-article:active h1, a.text-article:active p.caption, a.text-article:active {
+    filter: blur(0px);
+}
+
+@media screen and (max-width: 1050px) {
+    a.title {
+        font-size: 6rem;
+        line-height: 4.5rem;
+
+        transition: font-size .25s ease-in-out, line-height .25s ease-in-out;
+    }
+
+/*     div.nav-bar {
+        column-gap: .5rem;
+        transition: column-gap .25s ease-in-out;
+    } */
+}
+
+@media screen and (max-height: 825px) {
+    a.title {
+        font-size: 6rem;
+        line-height: 4.5rem;
+
+        transition: opacity .25s ease-in-out, font-size .25s ease-in-out, line-height .25s ease-in-out;
+    }
+}

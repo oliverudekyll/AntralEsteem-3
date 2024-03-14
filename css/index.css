@@ -1,0 +1,665 @@
+@font-face {
+  font-family: "Ladna Faux Bold";
+  src: url(../Fonts/Ladna-FauxBold.woff2);
+}
+
+@font-face {
+  font-family: "Ladna Faux Bold Italic";
+  src: url(../Fonts/Ladna-FauxBoldItalic.woff2);
+}
+
+@font-face {
+  font-family: "Ladna Faux Regular";
+  src: url(../Fonts/Ladna-FauxRegular.woff2);
+}
+
+@font-face {
+  font-family: "Ladna Faux Regular Italic";
+  src: url(../Fonts/Ladna-FauxRegularItalic.woff2);
+}
+
+@keyframes breathe {
+  from {
+    background-color: hsl(170, 10%, 17%);
+  }
+  50% {
+    background-color: hsl(150, 10%, 30%);
+  }
+  to {
+    background-color: hsl(170, 10%, 17%);
+  }
+}
+
+body {
+  margin: 0;
+  /*   background-color: #002233;
+  background-color: hsl(20, 50%, 10%);
+  background-color: hsl(370, 50%, 10%);
+  background-color: hsl(60, 10%, 30%);
+  background-color: hsl(230, 30%, 20%);
+  background-color: hsl(170, 10%, 20%); */
+  background-color: hsl(130, 10%, 15%);
+  /*   animation-name: breathe ease-in-out 8s infinite;
+ */
+}
+
+div.gradient {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  pointer-events: none;
+
+  background: linear-gradient(to top, hsl(170, 30%, 10%), transparent);
+
+  mix-blend-mode: normal;
+}
+
+#vignette {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  background-image: radial-gradient(
+    rgba(32, 255, 200, 0) 60%,
+    rgba(32, 255, 200, 1)
+  );
+
+  mix-blend-mode: screen;
+  opacity: 0.12;
+
+  pointer-events: none;
+}
+
+div.bg img {
+  position: fixed;
+  min-width: 100dvw;
+  min-height: 100dvh;
+}
+
+div.bg-video {
+  position: fixed;
+  min-width: 100dvw;
+  min-height: 100dvh;
+  object-fit: contain;
+  overflow: none;
+
+  z-index: 15;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+video {
+  position: absolute;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  opacity: 0.15;
+  filter: blur(8px);
+  mix-blend-mode: normal;
+  pointer-events: none;
+}
+
+a.title {
+  position: fixed;
+  margin: 0;
+  bottom: 1rem;
+  left: 1rem;
+
+  font-family: "Ladna Faux Bold", Arial, sans-serif;
+  font-size: 8rem;
+  line-height: 6rem;
+  letter-spacing: -0.4rem;
+  text-decoration: none;
+
+  color: rgb(230, 230, 230);
+  z-index: 20;
+
+  transition: opacity 0.25s ease-in-out, font-size 0.25s ease-in-out,
+    line-height 0.25s ease-in-out, letter-spacing 0.25s ease-in-out;
+}
+
+a.title:hover {
+  opacity: 0;
+  cursor: zoom-in;
+}
+
+a#contact {
+  position: fixed;
+  margin: 0;
+  top: 1rem;
+  left: 1rem;
+
+  font-family: "Ladna Faux Regular", Arial, sans-serif;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+  letter-spacing: -0.09rem;
+  text-decoration: none;
+
+  color: rgb(230, 230, 230);
+  cursor: pointer;
+  white-space: nowrap;
+  z-index: 20;
+
+  transition: mix-blend-mode 0.1s ease-in-out, filter 0.2s ease-in-out,
+    font-size 0.25s ease-in-out, line-height 0.25s ease-in-out,
+    letter-spacing 0.25s ease-in-out;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+a:hover {
+  filter: blur(4px);
+}
+
+div.button-language {
+  position: relative;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+
+a.language {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  font-family: "Ladna Faux Regular", Arial, sans-serif;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+  letter-spacing: -0.09rem;
+  text-decoration: none;
+
+  color: rgb(230, 230, 230);
+  cursor: pointer;
+  white-space: nowrap;
+  z-index: 20;
+
+  transition: mix-blend-mode 0.1s ease-in-out, filter 0.2s ease-in-out,
+    font-size 0.25s ease-in-out, line-height 0.25s ease-in-out,
+    letter-spacing 0.25s ease-in-out;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#dropdown {
+  position: relative;
+
+  display: flex;
+  column-gap: 0.7rem;
+
+  z-index: 20;
+  transition: column-gap 0.25s ease-in-out;
+}
+
+div.nav-bar {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+
+  display: flex;
+  row-gap: 0.35rem;
+  flex-flow: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  z-index: 20;
+  transition: column-gap 0.25s ease-in-out;
+}
+
+div#burgermenu {
+  display: none;
+}
+
+div.nav-bar a {
+  color: rgb(230, 230, 230);
+  text-decoration: none;
+}
+
+div.nav-button-container {
+  margin: 0;
+  /*     padding-left: 1rem; */
+
+  font-family: "Ladna Faux Regular", Arial, sans-serif;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+  letter-spacing: -0.09rem;
+  text-decoration: none;
+
+  color: rgb(230, 230, 230);
+  cursor: pointer;
+  white-space: nowrap;
+  z-index: 10;
+  mix-blend-mode: normal;
+
+  transition: mix-blend-mode 0.1s ease-in-out, filter 0.2s ease-in-out;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+div.nav-button-container:hover {
+  filter: blur(4px);
+}
+
+#works {
+  font-family: "Ladna Faux Regular", Arial, sans-serif;
+}
+
+#works.active {
+  font-family: "Ladna Faux Bold", Arial, sans-serif;
+}
+
+#texts {
+  font-family: "Ladna Faux Regular", Arial, sans-serif;
+}
+
+#texts.active {
+  font-family: "Ladna Faux Bold", Arial, sans-serif;
+}
+
+#cv {
+  font-family: "Ladna Faux Regular", Arial, sans-serif;
+}
+
+#cv.active {
+  font-family: "Ladna Faux Bold", Arial, sans-serif;
+}
+
+div#works-container {
+  position: absolute;
+  width: calc(100vw - 2rem);
+  top: 3rem;
+  padding: 1rem;
+
+  display: none;
+  opacity: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 4rem;
+
+  overflow-x: scroll;
+  /*   scroll-snap-type: x proximity;
+ */
+  z-index: 10;
+}
+
+div#works-container::-webkit-scrollbar {
+  display: none;
+}
+
+div#works-container.active {
+  position: absolute;
+  top: 3rem;
+  padding: 1rem;
+
+  display: flex;
+  opacity: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 4rem;
+
+  z-index: 10;
+  overflow: auto;
+}
+
+div.project {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  row-gap: 0.5rem;
+  /* max-width: min-content; */
+  /*     aspect-ratio: 4 / 3; */
+
+  transition: width 0.5s ease-in-out;
+
+  scroll-snap-align: center;
+}
+
+img.works {
+  position: relative;
+  height: calc(100vh - 21rem);
+  max-width: calc(100dvw - 2rem);
+  min-height: 500px;
+  object-fit: contain;
+
+  cursor: e-resize;
+}
+
+a.work {
+  font-family: "Ladna Faux Bold", sans-serif, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: -0.04rem;
+  text-decoration: none;
+  /*     text-transform: uppercase;
+ */
+  color: rgb(230, 230, 230);
+  mix-blend-mode: normal;
+  cursor: pointer;
+  white-space: nowrap;
+  z-index: 10;
+
+  transition: mix-blend-mode 0.1s ease-in-out, filter 0.2s ease-in-out;
+}
+
+a.work b {
+  font-family: "Ladna Faux Regular", sans-serif, Arial, sans-serif;
+  font-weight: normal;
+  padding-left: 0.2rem;
+  text-transform: initial;
+}
+
+div.padding-mobile {
+  display: none;
+  height: 0;
+  width: none;
+}
+
+div.column-container {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  mix-blend-mode: normal;
+  z-index: 15;
+
+  pointer-events: none;
+  overflow: hidden;
+}
+
+div#texts-container {
+  position: relative;
+  width: calc(37.5vw + 2rem);
+  max-width: 65ch;
+  max-height: calc(100dvh - 2rem);
+  height: min-content;
+  opacity: 0;
+  padding: 1rem;
+  padding-top: 0rem;
+
+  overflow: auto;
+  pointer-events: none;
+  flex-flow: column nowrap;
+  row-gap: 1rem;
+
+  display: flex;
+  align-items: flex-start;
+  flex-flow: column nowrap;
+  row-gap: 1rem;
+}
+
+div#cv-container {
+  position: relative;
+  width: calc(37.5vw + 2rem);
+  max-width: 65ch;
+  height: calc(100dvh - 2rem);
+  opacity: 0;
+  padding: 1rem;
+
+  overflow: auto;
+  pointer-events: none;
+}
+
+div#texts-container.active {
+  position: relative;
+  width: calc(37.5vw + 2rem);
+  max-height: calc(100dvh - 2rem);
+  height: min-content;
+  opacity: 1;
+  padding: 1rem;
+  padding-top: 0rem;
+
+  overflow: auto;
+  pointer-events: initial;
+}
+
+div#cv-container.active {
+  position: relative;
+  width: calc(37.5vw + 2rem);
+  height: calc(100dvh - 2rem);
+  opacity: 1;
+  padding: 1rem;
+
+  overflow: auto;
+  pointer-events: initial;
+}
+
+div.padding {
+  height: 5.25rem;
+  width: 100%;
+  pointer-events: none;
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 0;
+
+  font-family: "Ladna Faux Bold", sans-serif;
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+  letter-spacing: -0.09rem;
+
+  color: rgb(230, 230, 230);
+}
+
+.cv-container__block > h1 {
+  margin-bottom: 0.2rem;
+}
+
+p.body {
+  margin: 0;
+  margin-bottom: 0.2rem;
+
+  font-family: "Ladna Faux Regular", sans-serif;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.02rem;
+  text-wrap: balance;
+
+  color: rgb(230, 230, 230);
+}
+
+em {
+  font-family: "Ladna Faux Regular Italic";
+}
+
+a.text-article {
+  position: relative;
+  overflow: visible;
+
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: mix-blend-mode 0.1s ease-in-out, filter 0.2s ease-in-out;
+}
+
+a.text-article:hover {
+  mix-blend-mode: difference;
+  filter: blur(4px);
+  white-space: normal;
+}
+
+p.caption {
+  margin: 0;
+
+  font-family: "Ladna Faux Bold", sans-serif;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.02rem;
+  text-wrap: balance;
+
+  color: rgb(230, 230, 230);
+}
+
+p.caption em {
+  font-family: "Ladna Faux Bold Italic";
+}
+
+@media screen and (max-width: 1128px) {
+  a.title {
+    font-size: 5rem;
+    line-height: 3.75rem;
+    letter-spacing: -0.25rem;
+  }
+}
+
+@media screen and (max-height: 825px) {
+  a.title {
+    font-size: 6rem;
+    line-height: 4.5rem;
+    letter-spacing: -0.3rem;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  a.title {
+    font-size: 2.75rem;
+    line-height: 2.0625rem;
+    letter-spacing: -0.1375rem;
+  }
+
+  div.nav-bar {
+    display: flex;
+  }
+
+  #dropdown {
+    display: none;
+    flex-flow: column;
+    row-gap: 0.5rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  #dropdown.active {
+    display: flex;
+    flex-flow: column;
+    row-gap: 0.5rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  div#burgermenu {
+    display: block;
+    position: relative;
+    /*         height: 1.3rem; */
+    width: 2.5rem;
+    transform-origin: right;
+    transform: scaleX(0.9);
+
+    cursor: pointer;
+  }
+
+  a#contact,
+  a.language {
+    font-size: 1.575rem;
+    line-height: 1.3rem;
+    letter-spacing: -0.063rem;
+  }
+
+  div.nav-button-container {
+    font-size: 1.575rem;
+    line-height: 1.3rem;
+    letter-spacing: -0.063rem;
+
+    text-align: right;
+    white-space: nowrap;
+    width: min-content;
+
+    flex-basis: 50%;
+  }
+
+  div.nav-button-container:hover {
+    filter: none;
+  }
+
+  a:hover {
+    filter: none;
+  }
+
+  div#works-container {
+    flex-flow: column;
+    row-gap: 4rem;
+    margin-bottom: 10rem;
+  }
+
+  div.column-container {
+    justify-content: center;
+    width: calc(100dvw - 2rem);
+  }
+
+  #cv-container.active {
+    min-width: calc(100dvw - 4rem);
+    width: calc(100dvw - 4rem);
+    flex-basis: 100%;
+    padding: 0rem;
+
+    margin-bottom: 10rem;
+  }
+
+  #text-container.active {
+    min-width: calc(100dvw - 4rem);
+    width: calc(100dvw - 4rem);
+    flex-basis: 100%;
+    padding: 0rem;
+
+    margin-bottom: 10rem;
+  }
+
+  h1 {
+    font-size: 1.575rem;
+    line-height: 1.575rem;
+    letter-spacing: -0.063rem;
+  }
+
+  p.body {
+    font-size: 0.9rem;
+    line-height: 1.08rem;
+    letter-spacing: -0.036rem;
+  }
+
+  div.project {
+    min-height: initial;
+
+    scroll-snap-align: center;
+  }
+
+  img.works {
+    min-height: 0px;
+    /*         min-width: 400px; */
+    height: initial;
+    object-fit: contain;
+  }
+
+  a.work {
+    font-size: 0.9rem;
+    line-height: 1.08rem;
+    letter-spacing: -0.036rem;
+    white-space: pre-wrap;
+  }
+
+  div.padding-mobile {
+    display: block;
+    position: relative;
+    height: 1.5rem;
+  }
+}
